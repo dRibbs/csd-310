@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 
 # Connect to the MongoDB database
-client = MongoClient("mongodb://localhost:27017/")
+client = MongoClient("mongodb+srv://admin:admin@cluster0.2agz2qq.mongodb.net/")
 db = client.pytech
 students = db.students
 
