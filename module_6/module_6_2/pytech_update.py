@@ -1,23 +1,20 @@
-"""
-        Gillenwater, Sam
+# Gillenwater, Sam
+# CYBR410 - Prof Haas
 
-        CYBR410 - Prof Haas
+# MongoDB Student Data Management
 
-MongoDB Student Data Management
+# This script connects to a MongoDB database and performs operations on a collection named 'students'.
+# It retrieves all documents from the collection, updates the last name for a specific student, and displays the updated document.
 
-This script connects to a MongoDB database and performs operations on a collection named 'students'.
-It retrieves all documents from the collection, updates the last name for a specific student, and displays the updated document.
+# Prerequisites!:
+# - pymongo library must be installed (install via 'pip install pymongo')
 
-Prerequisites!:
-- pymongo library must be installed (install via 'pip install pymongo')
+# Instructions:
+# 1. Ensure you have the necessary MongoDB connection string.
+# 2. Update the connection string in the 'client' variable to point to your MongoDB cluster.
+# 3. Run the script and observe the output.
 
-Instructions:
-1. Ensure you have the necessary MongoDB connection string.
-2. Update the connection string in the 'client' variable to point to your MongoDB cluster.
-3. Run the script and observe the output.
-
-Note: This code assumes you have a MongoDB collection named 'students' with appropriate documents.
-"""
+# Note: This code assumes you have a MongoDB collection named 'students' with appropriate documents.
 
 from pymongo import MongoClient
 
