@@ -30,7 +30,7 @@ for doc in docs:
     print(doc)
 
 # Update the last name for student_id 1007
-students.update_one({"student_id": 1007}, {"$set": {"last_name": "O'Neal"}})
+students.update_one({"student_id": 1007}, {"$set": {"last_name": "Gallagher"}})
 
 # Display the updated document
 print("\nUpdated document for student_id 1007:")
