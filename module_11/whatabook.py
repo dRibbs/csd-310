@@ -1,7 +1,9 @@
 # Author: Gillenwater, Sam
 # WhatABook Assignment
 
+import sys
 import mysql.connector
+from mysql.connector import errorcode
 
 # Database Configuration Attributes
 DB_HOST = "127.0.0.1"
