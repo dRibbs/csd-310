@@ -4,9 +4,9 @@
 import mysql.connector
 
 # Database Configuration Attributes
-DB_HOST = "localhost"
-DB_USER = "your_username"
-DB_PASS = "your_password"
+DB_HOST = "127.0.0.1"
+DB_USER = "whatabook_user"
+DB_PASS = "MySQL8IsGreat!"
 DB_NAME = "whatabook"
 
 
