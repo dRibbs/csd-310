@@ -43,7 +43,7 @@ def show_locations(cursor):
 
 # Function to validate the user's ID
 def validate_user(cursor):
-    user_id = input("Enter user_id: ")
+    user_id = int(input("Enter user_id: "))
     cursor.execute("SELECT * FROM User WHERE user_id = %s;", (user_id,))
     if cursor.fetchone():
         return user_id
@@ -108,30 +108,30 @@ def main():
         print("3. My Account")
         print("4. Exit Program")
 
-        choice = input("Enter your choice: ")
+        choice = int(input("Enter your choice: "))
 
         # Handle user choices
-        if choice == "0":
+        if choice == 0:
             register_user(cursor)
-        elif choice == "1":
+        elif choice == 1:
             show_books(cursor)
-        elif choice == "2":
+        elif choice == 2:
             show_locations(cursor)
-        elif choice == "3":
+        elif choice == 3:
             user_id = validate_user(cursor)
             if user_id:
                 show_account_menu()
-                account_choice = input("Enter your choice: ")
+                account_choice = int(input("Enter your choice: "))
 
-                if account_choice == "1":
+                if account_choice == 1:
                     show_wishlist(cursor, user_id)
-                elif account_choice == "2":
+                elif account_choice == 2:
                     show_books_to_add(cursor, user_id)
-                    book_id = input("Select a book to add to your wishlist: ")
+                    book_id = int(input("Select a book to add to your wishlist: "))
                     add_book_to_wishlist(cursor, user_id, book_id)
-                elif account_choice == "3":
+                elif account_choice == 3:
                     continue
-        elif choice == "4":
+        elif choice == 4:
             print("Exiting the program...")
             break
 
