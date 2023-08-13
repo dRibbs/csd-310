@@ -6,13 +6,13 @@
 */
 
 -- Drop test user if exists 
-DROP USER IF EXISTS 'new_whatabook_user'@'localhost';
+DROP USER IF EXISTS 'whatabook_user'@'localhost';
 
--- Create new_whatabook_user and grant them all privileges to the new_whatabook database 
-CREATE USER 'new_whatabook_user'@'localhost' IDENTIFIED WITH mysql_native_password BY 'MySQL8IsAwesome!';
+-- Create whatabook_user and grant them all privileges to the whatabook database 
+CREATE USER 'whatabook_user'@'localhost' IDENTIFIED WITH mysql_native_password BY 'MySQL8IsGreat!';
 
--- Grant all privileges to the new_whatabook database to user new_whatabook_user on localhost 
-GRANT ALL PRIVILEGES ON new_whatabook.* TO 'new_whatabook_user'@'localhost';
+-- Grant all privileges to the whatabook database to user whatabook_user on localhost 
+GRANT ALL PRIVILEGES ON whatabook.* TO 'whatabook_user'@'localhost';
 
 -- Drop constraints if they exist
 ALTER TABLE wishlist DROP FOREIGN KEY IF EXISTS fk_book;
@@ -45,6 +45,7 @@ CREATE TABLE user (
     user_id         INT         NOT NULL    AUTO_INCREMENT,
     first_name      VARCHAR(75) NOT NULL,
     last_name       VARCHAR(75) NOT NULL,
+    email           VARCHAR(200) UNIQUE NOT NULL,
     PRIMARY KEY(user_id) 
 );
 
@@ -100,14 +101,14 @@ INSERT INTO book(book_name, author)
 /*
     Insert user
 */ 
-INSERT INTO user(first_name, last_name) 
-    VALUES('Arthur', 'Dent');
+INSERT INTO user(first_name, last_name, email) 
+    VALUES('Arthur', 'Dent', 'arthur.dent@email.com');
 
-INSERT INTO user(first_name, last_name)
-    VALUES('Ford', 'Prefect');
+INSERT INTO user(first_name, last_name, email)
+    VALUES('Ford', 'Prefect', 'ford.prefect@email.com');
 
-INSERT INTO user(first_name, last_name)
-    VALUES('Trillian', 'Astra');
+INSERT INTO user(first_name, last_name, email)
+    VALUES('Trillian', 'Astra', 'trillian.astra@email.com');
 
 /*
     Insert wishlist records 
